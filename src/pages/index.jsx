@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import { Link, graphql } from 'gatsby';
 import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
@@ -8,13 +10,17 @@ import SEO from '../components/seo';
 import Sidebar from '../components/sidebar/Sidebar';
 import TechTag from '../components/tags/TechTag';
 
-const IndexPage = ({ data }) => {
-  const posts = data.allMarkdownRemark.edges;
-  const { labels } = data.site.siteMetadata;
+/** @type {React.FC} */
+const IndexPage = ({ data: {
+  site,
+  allMarkdownRemark,
+} }) => {
+  const posts = allMarkdownRemark.edges;
+  const { labels } = site.siteMetadata;
   const currentPage = 1;
   const postsPerPage = 3; // see limit in graphql query below
   const nextPage = `/${(currentPage + 1).toString()}`;
-  const hasNextPage = data.allMarkdownRemark.totalCount > postsPerPage;
+  const hasNextPage = allMarkdownRemark.totalCount > postsPerPage;
 
   const getTechTags = tags => {
     const techTags = [];
@@ -29,7 +35,7 @@ const IndexPage = ({ data }) => {
               name={label.name}
               size={label.size}
               color={label.color}
-            />
+            />,
           );
         }
       });
@@ -87,6 +93,14 @@ const IndexPage = ({ data }) => {
       </div>
     </Layout>
   );
+};
+
+IndexPage.propTypes = {
+  data: PropTypes.instanceOf(Object),
+};
+
+IndexPage.defaultProps = {
+  data: {},
 };
 
 export const pageQuery = graphql`

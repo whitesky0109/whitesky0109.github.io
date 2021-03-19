@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import { FaCheckCircle } from 'react-icons/fa';
 import Layout from '../components/layout';
@@ -8,8 +9,8 @@ import './index.css';
 import Sidebar from '../components/sidebar/Sidebar';
 import TechTag from '../components/tags/TechTag';
 
-const AboutPage = props => {
-  const { labels } = props.data.site.siteMetadata;
+const AboutPage = ({ data }) => {
+  const { labels } = data.site.siteMetadata;
   const aboutTags = ['react', 'nodejs', 'html', 'css'];
   const tags = {};
   labels.forEach(label => {
@@ -62,28 +63,24 @@ const AboutPage = props => {
                   tag="react"
                   tech="React"
                   name={tags.react}
-                  size={20}
                   color="deepskyblue"
                 />
                 <TechTag
                   tag="nodejs"
                   tech="Node.js"
                   name={tags.nodejs}
-                  size={20}
                   color="lightgreen"
                 />
                 <TechTag
                   tag="html"
                   tech="HTML"
                   name={tags.html}
-                  size={20}
                   color="darkorange"
                 />
                 <TechTag
                   tag="css"
                   tech="CSS"
                   name={tags.css}
-                  size={20}
                   color="teal"
                 />
               </div>
@@ -118,6 +115,14 @@ const AboutPage = props => {
       </div>
     </Layout>
   );
+};
+
+AboutPage.propTypes = {
+  data: PropTypes.instanceOf(Object),
+};
+
+AboutPage.defaultProps = {
+  data: {},
 };
 
 export const pageQuery = graphql`
