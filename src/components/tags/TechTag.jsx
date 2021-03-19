@@ -3,30 +3,34 @@ import PropTypes from 'prop-types';
 
 import { Link } from 'gatsby';
 
-import './tags.css';
+import {
+  H4GlobalStyled,
+  TechTagButtonStyled,
+  TagStyled,
+  SvgStyled,
+} from './TechTagStyled';
 
 const TechTag = ({
   tag, tech, name, size, color, img,
 }) => (
   <div className="d-inline-block p-1">
+    <H4GlobalStyled />
     <Link to={`/tags/${tag}/`}>
-      <button type="button" className="tech-tag text-white">
-        <p className="d-inline">
-          {tech}
-          {' '}
-        </p>
-        <div className="d-inline" style={{ fontSize: size, color }}>
-          <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width={size} height={size} style={{ fill: `${color}` }}>
+      <TechTagButtonStyled className="text-white">
+        <p className="d-inline">{`${tech} `}</p>
+        <TagStyled className="d-inline" size={size} color={color}>
+          <SvgStyled role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width={size} height={size} color={color}>
             <title>{tech}</title>
             {img != null && <image href={img} width={size} height={size} />}
             {name != null && (
               Array.isArray(name)
-                ? (name.map((n, i) => <path key={i} d={n} />))
+                // eslint-disable-next-line react/no-array-index-key
+                ? (name.map((n) => <path key={n} d={n} />))
                 : (<path d={name} />)
             )}
-          </svg>
-        </div>
-      </button>
+          </SvgStyled>
+        </TagStyled>
+      </TechTagButtonStyled>
     </Link>
 
   </div>
