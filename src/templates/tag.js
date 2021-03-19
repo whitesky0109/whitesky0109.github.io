@@ -9,12 +9,11 @@ import SEO from '../components/seo';
 import Sidebar from '../components/sidebar/Sidebar';
 import TechTag from '../components/tags/TechTag';
 
-const Tag = ({ pageContext, data }) => {
-  const posts = data.allMarkdownRemark.edges;
-  const { labels } = data.site.siteMetadata;
-  console.log(pageContext.tag);
+const Tag = ({ pageContext, data: { allMarkdownRemark, site } }) => {
+  const posts = allMarkdownRemark.edges;
+  const { labels } = site.siteMetadata;
   const { tag } = pageContext;
-  const { totalCount } = data.allMarkdownRemark;
+  const { totalCount } = allMarkdownRemark;
   const tagHeader = `${totalCount} post${
     totalCount === 1 ? '' : 's'
   } tagged with "${tag}"`;
@@ -95,6 +94,11 @@ Tag.propTypes = {
       ),
     }),
   }),
+};
+
+Tag.defaultProps = {
+  pageContext: null,
+  data: null,
 };
 
 export const pageQuery = graphql`

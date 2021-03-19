@@ -11,10 +11,7 @@ import Sidebar from '../components/sidebar/Sidebar';
 import TechTag from '../components/tags/TechTag';
 
 /** @type {React.FC} */
-const IndexPage = ({ data: {
-  site,
-  allMarkdownRemark,
-} }) => {
+const IndexPage = ({ data: { site, allMarkdownRemark } }) => {
   const posts = allMarkdownRemark.edges;
   const { labels } = site.siteMetadata;
   const currentPage = 1;

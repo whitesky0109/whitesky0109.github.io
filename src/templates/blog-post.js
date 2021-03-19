@@ -8,13 +8,13 @@ import Sidebar from '../components/sidebar/Sidebar';
 import TechTag from '../components/tags/TechTag';
 import CustomShareBlock from '../components/CustomShareBlock';
 
-const BlogPost = props => {
-  const post = props.data.markdownRemark;
-  const labels = props.data.site.siteMetadata.labels;
-  const siteName = props.data.site.siteMetadata.title;
-  const siteUrl = props.data.site.siteMetadata.url;
-  const url = `${siteUrl}${props.pageContext.slug}`;
-  const tags = post.frontmatter.tags;
+const BlogPost = ({ data: { markdownRemark, site }, pageContext }) => {
+  const post = markdownRemark;
+  const { labels } = site.siteMetadata;
+  const siteName = site.siteMetadata.title;
+  const siteUrl = site.siteMetadata.url;
+  const url = `${siteUrl}${pageContext.slug}`;
+  const { tags } = post.frontmatter;
 
   const getTechTags = tags => {
     const techTags = [];
