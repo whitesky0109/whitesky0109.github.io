@@ -1,20 +1,20 @@
 "use strict"
 
 module.exports = {
-  url: "https://developer-diary.netlify.com",
-  title: "Developer Diary",
-  tagline: "Autodidact developer and sometimes hoop-jumper",
-  copyright: "© 2019 willjw3, All rights reserved",
+  url: "https://whitesky0109.github.io",
+  title: "개발자 성장기",
+  tagline: "Half-stack 개발자에서 Full-stack 개발자 되기 위한 성장 이야기",
+  copyright: "© 2019 whitesky0109, All rights reserved",
   author: {
-    name: "WILL JAY",
+    name: "Gunwoo cho",
     bio: "Self-taught web developer and whisky aficionado",
     contacts: {
-      linkedin: "https://www.linkedin.com/in/will-ward-65234a170/",
-      github: "https://github.com/willjw3",
+      linkedin: "https://www.linkedin.com/in/건우-조-947268137/",
+      github: "https://github.com/whitesky0109",
       stackoverflow:
         "https://stackoverflow.com/users/10262432/will-ward?tab=profile",
       freecodecamp: "https://www.freecodecamp.org/willjw3",
-      twitter: "https://twitter.com/willjw3",
+      twitter: "",
     },
   },
   labels: [
