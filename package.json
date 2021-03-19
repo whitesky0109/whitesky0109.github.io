@@ -1,9 +1,9 @@
 {
   "name": "gatsby-starter-developer-diary",
   "private": true,
-  "description": "A Gatsby blog template designed for web developers. Blazing fast, it includes beautful web developer topic tags and social-media links",
+  "description": "private blog",
   "version": "0.1.0",
-  "author": "willjw3 <https://github.com/willjw3>",
+  "author": "whitesky0109 <https://github.com/whitesky0109>",
   "dependencies": {
     "@emotion/core": "^10.0.10",
     "bootstrap": "^4.3.1",
@@ -36,7 +36,8 @@
   },
   "devDependencies": {
     "gh-pages": "^3.1.0",
-    "prettier": "^1.17.1"
+    "prettier": "^1.17.1",
+    "yarn": "^1.22.10"
   },
   "keywords": [
     "gatsby"
@@ -46,7 +47,7 @@
     "build": "gatsby build",
     "develop": "gatsby develop -H 0.0.0.0",
     "format": "prettier --write src/**/*.{js,jsx}",
-    "start": "npm run develop",
+    "start": "yarn develop",
     "serve": "gatsby serve",
     "deploy": "gatsby build && gh-pages -d public -b public",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
