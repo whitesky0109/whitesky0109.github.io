@@ -123,5 +123,11 @@ module.exports = {
       size: 20,
       color: "rebeccapurple",
     },
+    {
+      tag: 'diary',
+      tech: 'Diary',
+      img: '/images/diary.svg',
+      size: 20,
+    }
   ],
 }
