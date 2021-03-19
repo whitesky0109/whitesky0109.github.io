@@ -1,14 +1,13 @@
-import React from "react"
-import { StaticQuery, graphql, Link } from "gatsby"
-import Bio from "./Bio"
-import "./sidebar.css"
+import React from 'react';
+import { StaticQuery, graphql, Link } from 'gatsby';
 
-import SocialLinks from "./SocialLinks"
-import TechTags from "./TechTags"
+import Bio from './Bio';
+import './sidebar.css';
 
+import SocialLinks from './SocialLinks';
+import TechTags from './TechTags';
 
-const Sidebar = () => {
-    return (
+const Sidebar = () => (
   <StaticQuery
     query={graphql`
                 query SiteBioQuery {
@@ -49,8 +48,8 @@ const Sidebar = () => {
                     }
                 }
             `}
-            render={data => (
-              <>
+    render={(data) => (
+      <>
         <div className="sidebar-main border-right">
           <Bio author={data.site.siteMetadata.author} tagline={data.site.siteMetadata.tagline} />
           <SocialLinks contacts={data.site.siteMetadata.contacts} />
@@ -66,7 +65,6 @@ const Sidebar = () => {
       </>
     )}
   />
-  )
-}
+);
 
-export default Sidebar
+export default Sidebar;
