@@ -1,21 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './sidebar.css';
+import {
+  ProfileImgStyled, AuthorBioStyled,
+  SmallStyled,
+} from './BioStyled';
 
-import whitesky0109 from '../../images/whitesky0109.jpg';
+import whitesky0109Avatar from '../../images/whitesky0109.jpg';
 
 /** @type {React.FC} */
 const Bio = ({ author, tagline }) => (
   <div className="bio-main w-75">
-    <img
-      src={whitesky0109}
-      style={{ minWidth: '100px', maxWidth: '100px' }}
-      className="profile-img"
-      alt=""
-    />
-    <h3 className="mt-2 author-bio">{author}</h3>
-    <small className="text-muted">{tagline}</small>
+    <ProfileImgStyled src={whitesky0109Avatar} alt="" />
+    <AuthorBioStyled className="mt-2">{author}</AuthorBioStyled>
+    <SmallStyled className="text-muted">{tagline}</SmallStyled>
   </div>
 );
 
