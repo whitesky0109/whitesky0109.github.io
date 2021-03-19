@@ -31,6 +31,10 @@ module.exports = {
 ![](images/snapshot/lintError1.PNG)
 (헉....)
 
+---
 ## 도움 받은 사이트
  - [Using ESLint](https://www.gatsbyjs.com/docs/how-to/custom-configuration/eslint/)
  - [github blog 생성하기 (feat. gatsby)](https://velog.io/@hwang-eunji/create-github-blog-feat.-gatsby)
+
+## changed
+  [commit](https://github.com/whitesky0109/whitesky0109.github.io/commit/094d853b0d38d6f8cf23642d418479b232382f16)
