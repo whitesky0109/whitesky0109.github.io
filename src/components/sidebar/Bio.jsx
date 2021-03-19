@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 
 import './sidebar.css';
 
-import willjw3 from '../../images/willjw3.jpg';
+import whitesky0109 from '../../images/whitesky0109.jpg';
 
 /** @type {React.FC} */
 const Bio = ({ author, tagline }) => (
   <div className="bio-main w-75">
     <img
-      src={willjw3}
-      style={{ maxWidth: '100px' }}
+      src={whitesky0109}
+      style={{ minWidth: '100px', maxWidth: '100px' }}
       className="profile-img"
       alt=""
     />
