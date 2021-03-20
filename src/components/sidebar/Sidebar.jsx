@@ -2,10 +2,14 @@ import React from 'react';
 import { StaticQuery, graphql, Link } from 'gatsby';
 
 import Bio from './Bio';
-import './sidebar.css';
 
 import SocialLinks from './SocialLinks';
 import TechTags from './TechTags';
+
+import {
+  SiderbarMainStyled,
+  PageLinksStyled,
+} from './SidebarStyled';
 
 const Sidebar = () => (
   <StaticQuery
@@ -48,20 +52,20 @@ const Sidebar = () => (
                     }
                 }
             `}
-    render={(data) => (
+    render={({ site: { siteMetadata }, allMarkdownRemark }) => (
       <>
-        <div className="sidebar-main border-right">
-          <Bio author={data.site.siteMetadata.author} tagline={data.site.siteMetadata.tagline} />
-          <SocialLinks contacts={data.site.siteMetadata.contacts} />
-          <div className="page-links">
+        <SiderbarMainStyled className="border-right">
+          <Bio author={siteMetadata.author} tagline={siteMetadata.tagline} />
+          <SocialLinks contacts={siteMetadata.contacts} />
+          <PageLinksStyled>
             <Link to="/"><span className="text-dark d-block py-1">Blog Home</span></Link>
             <Link to="/about"><span className="text-dark d-block py-1">About</span></Link>
             <Link to="/archive"><span className="text-dark d-block py-1">Archive</span></Link>
-          </div>
+          </PageLinksStyled>
           <div className="tech-tags mt-4">
-            <TechTags labels={data.site.siteMetadata.labels} posts={data.allMarkdownRemark.edges} />
+            <TechTags labels={siteMetadata.labels} posts={allMarkdownRemark.edges} />
           </div>
-        </div>
+        </SiderbarMainStyled>
       </>
     )}
   />

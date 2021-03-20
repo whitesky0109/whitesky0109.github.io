@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 
 import MobileSocialLinks from './MobileSocialLinks';
@@ -8,38 +7,20 @@ import SocialLinks from './SocialLinks';
 import MobileBio from './MobileBio';
 
 import './header.css';
+import Styled from './headerStyled';
 
 const Header = ({ siteTitle, author, contacts }) => (
-  <header
-    className="head-main"
-    style={{
-      background: 'black',
-    }}
-  >
-    <div
-      className="head-elements"
-      style={{
-        margin: '0',
-        padding: '.75rem',
-      }}
-    >
-      <h1 className="head-logo ml-4" style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: 'white',
-            textDecoration: 'none',
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
+  <Styled.HeaderMain>
+    <Styled.HeaderElements>
+      <Styled.HeadLogo className="ml-4">
+        <Styled.Link to="/">{siteTitle}</Styled.Link>
+      </Styled.HeadLogo>
       <SocialLinks contacts={contacts} />
-    </div>
+    </Styled.HeaderElements>
     <MobileSocialLinks contacts={contacts} />
     <MobilePageLinks />
     <MobileBio author={author} />
-  </header>
+  </Styled.HeaderMain>
 );
 
 Header.propTypes = {
