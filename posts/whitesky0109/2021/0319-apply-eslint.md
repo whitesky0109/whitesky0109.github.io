@@ -1,5 +1,5 @@
 ---
-title: 'ESLint 적용기'
+title: 'Gatsby에 ESLint 적용기'
 tags: ['nodejs', 'javascript', 'vscode']
 published: true
 date: '2021-03-19'

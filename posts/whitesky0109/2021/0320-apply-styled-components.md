@@ -1,5 +1,5 @@
 ---
-title: 'Styled-component 적용기'
+title: 'Gatsby에 Styled-component 적용기'
 tags: ['nodejs', 'javascript', 'css']
 published: true
 date: '2021-03-20'
