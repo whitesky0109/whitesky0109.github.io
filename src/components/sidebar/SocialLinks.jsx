@@ -9,12 +9,12 @@ import {
   FaTwitterSquare,
 } from 'react-icons/fa';
 
-import SideSocialLinksStyled from './SocialLinksStyled';
+import Styled from './SocialLinksStyled';
 import './sidebar.css';
 
 /** @type {React.FC} */
 const SocialLinks = ({ contacts }) => (
-  <SideSocialLinksStyled className="float-left mt-3 mb-3">
+  <Styled.SideSocialLinks className="float-left mt-3 mb-3">
     <a className="text-secondary p-2" href={contacts.linkedin}>
       <span title="Linked In">
         <FaLinkedin size={26} style={{ color: 'secondary' }} />
@@ -40,7 +40,7 @@ const SocialLinks = ({ contacts }) => (
         <FaTwitterSquare size={26} style={{ color: 'secondary' }} />
       </span>
     </a>
-  </SideSocialLinksStyled>
+  </Styled.SideSocialLinks>
 );
 
 SocialLinks.propTypes = {

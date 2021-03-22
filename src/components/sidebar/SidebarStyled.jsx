@@ -1,11 +1,16 @@
 import styled from 'styled-components';
 
-export const SiderbarMainStyled = styled.div`
+const SiderbarMain = styled.div`
   width: 100%;
 `;
 
-export const PageLinksStyled = styled.div`
+const PageLinks = styled.div`
   margin-top: 3rem;
   padding-top: 4rem;
   font-family: "Raleway";
 `;
+
+export default {
+  SiderbarMain,
+  PageLinks,
+};
