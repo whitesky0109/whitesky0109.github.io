@@ -8,8 +8,10 @@ import {
   FaTwitterSquare,
 } from 'react-icons/fa';
 
+import Styled from './SocialLinksStyled';
+
 const SocialLinks = ({ contacts }) => (
-  <div className="social-links float-right mr-4">
+  <Styled.SocialLinks className="float-right mr-4">
     <a
       className="text-primary ml-4"
       href={contacts.linkedin}
@@ -50,7 +52,7 @@ const SocialLinks = ({ contacts }) => (
         <FaTwitterSquare size={40} style={{ color: 'info' }} />
       </span>
     </a>
-  </div>
+  </Styled.SocialLinks>
 );
 
 SocialLinks.propTypes = {

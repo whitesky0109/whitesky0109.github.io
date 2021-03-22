@@ -10,10 +10,11 @@ import {
 } from 'react-icons/fa';
 
 import '../layout.css';
+import Styled from './MobileSocialLinksStyled';
 
 /** @type {React.FC<>} */
 const MobileSocialLinks = ({ contacts }) => (
-  <div className="bottom-bar py-1">
+  <Styled.BottomBar className="py-1">
     <a
       className=" text-primary"
       href={contacts.linkedin}
@@ -54,7 +55,7 @@ const MobileSocialLinks = ({ contacts }) => (
         <FaTwitterSquare size={26} style={{ color: 'info' }} />
       </span>
     </a>
-  </div>
+  </Styled.BottomBar>
 );
 
 MobileSocialLinks.propTypes = {

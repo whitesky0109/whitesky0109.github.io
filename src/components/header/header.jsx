@@ -6,7 +6,6 @@ import MobilePageLinks from './MobilePageLinks';
 import SocialLinks from './SocialLinks';
 import MobileBio from './MobileBio';
 
-import './header.css';
 import Styled from './headerStyled';
 
 const Header = ({ siteTitle, author, contacts }) => (
