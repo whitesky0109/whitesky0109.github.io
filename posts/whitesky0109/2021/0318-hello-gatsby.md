@@ -50,12 +50,12 @@ Repository 이름을 어떻게 만드냐에 따라 root URL로 접근할 수 있
 ### Repository [name]
 
 - {githubUserId}.github.io/{name} 로 접근해야 페이지에 접근이 가능하다.
-  ![](/images/snapshot/newRepositoryGuide2.png)
+  ![](/snapshot/newRepositoryGuide2.png)
 
 ### Repository [githubUserId].github.io
 
 - {githubUserId}.github.io/ 로 접근하면 페이지에 접근이 가능했다.
-  ![](/images/snapshot/newRepositoryGuide1.png)
+  ![](/snapshot/newRepositoryGuide1.png)
   (자세히 보면 친절하게 github에서 잘못 썻다고 경고하고 있다.)
 
 - 다만 이러는 경우 git source가 github.com/{githubUserId}/{githubUserId}.github.io가 되어 소스 URL이 길어지는건 조금 아쉬움이 남는다.
