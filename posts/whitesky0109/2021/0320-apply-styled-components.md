@@ -1,11 +1,12 @@
 ---
 title: 'Styled-component 적용기'
-tags: ['javascript', 'vscode']
+tags: ['nodejs', 'javascript', 'css']
 published: true
 date: '2021-03-20'
 ---
 
-사내에서 [Styled-component](https://www.daleseo.com/react-styled-components/)로 styled를 조절하다 보니 익숙해져 해당 블로그에도 styled-component를 적용해볼려고한다.
+사내에서 [Styled-component](https://www.daleseo.com/react-styled-components/)로 CSS를 수정하다 보니
+[CSS-in-JS](https://velog.io/tags/CSS-in-JS)가 익숙해서 해당 블로그에도 styled-component를 적용해볼려고 한다.
 
 ---
 ## 설치

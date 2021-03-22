@@ -17,6 +17,7 @@ const Header = ({ siteTitle, author, contacts }) => (
       </Styled.HeadLogo>
       <SocialLinks contacts={contacts} />
     </Styled.HeaderElements>
+
     <MobileSocialLinks contacts={contacts} />
     <MobilePageLinks />
     <MobileBio author={author} />

@@ -1,6 +1,6 @@
 ---
 title: 'Gatsby로 Github.io 생성기'
-tags: ['gatsby']
+tags: ['gatsby', 'nodejs']
 published: true
 date: '2021-03-18'
 ---

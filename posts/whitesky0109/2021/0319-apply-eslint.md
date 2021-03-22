@@ -1,6 +1,6 @@
 ---
 title: 'ESLint 적용기'
-tags: ['javascript', 'vscode']
+tags: ['nodejs', 'javascript', 'vscode']
 published: true
 date: '2021-03-19'
 ---
@@ -31,7 +31,7 @@ module.exports = {
 
 ## 적용했더니...?
 
-![](images/snapshot/lintError1.PNG)
+![](/snapshot/lintError1.PNG)
 (헉....)
 
 ---
