@@ -1,0 +1,26 @@
+language: node_js
+
+node_js:
+  - "lts/*"
+
+cache:
+  yarn: true
+  directories:
+    - node_modules
+    - public
+    - .cache
+
+deploy:
+  provider: pages # Use Github pages deploy process
+  github_token: $GITHUB_TOKEN # Github security/auth token
+  keep_history: true
+  target_branch: public
+  on:
+    branch: master
+
+# before_script:
+#   - "npm i -g gatsby-cli"
+#   - "yarn"
+
+script:
+  - gatsby build
