@@ -1,5 +1,5 @@
 ---
-title: 'git push 후 자동 배포 적용하기'
+title: 'travis를 활용하여 git push 후 자동 배포 적용하기'
 tags: ['git']
 published: true
 date: '2021-03-22'

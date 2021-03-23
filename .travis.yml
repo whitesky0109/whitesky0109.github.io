@@ -19,9 +19,9 @@ deploy:
   on:
     branch: master
 
-before_script:
-  - "npm i -g gatsby-cli"
-  - "yarn"
+# before_script:
+#   - "npm i -g gatsby-cli"
+#   - "yarn"
 
 script:
   - gatsby build
