@@ -12,7 +12,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Header from './header/header';
 import './layout.css';
 
-import { MainStyled } from './layoutStlyed';
+import Styled from './layoutStlyed';
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -42,7 +42,7 @@ const Layout = ({ children }) => (
           author={data.site.siteMetadata.author}
           contacts={data.site.siteMetadata.contacts}
         />
-        <MainStyled>
+        <Styled.Main>
           <main className="p-4">{children}</main>
           <footer className="text-center">
             <hr />
@@ -62,7 +62,7 @@ const Layout = ({ children }) => (
               </i>
             </p>
           </footer>
-        </MainStyled>
+        </Styled.Main>
       </>
     )}
   />
