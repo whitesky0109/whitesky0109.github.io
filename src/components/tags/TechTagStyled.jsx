@@ -1,10 +1,10 @@
 import styled, { createGlobalStyle } from 'styled-components';
 
-export const H4GlobalStyled = createGlobalStyle`
+const H4Global = createGlobalStyle`
   font-family: "Raleway";
 `;
 
-export const TechTagButtonStyled = styled.button`
+const TechTagButton = styled.button`
   background: black;
   border-radius: 20% 0 0 20%;
   border-color: transparent;
@@ -12,11 +12,18 @@ export const TechTagButtonStyled = styled.button`
   font-size: .85rem;
 `;
 
-export const TagStyled = styled.div`
+const Tag = styled.div`
   font-size: ${({ size }) => size}px;
   color: ${({ color }) => color};
 `;
 
-export const SvgStyled = styled.svg`
+const Svg = styled.svg`
   fill: ${({ color }) => color};
 `;
+
+export default {
+  H4Global,
+  TechTagButton,
+  Tag,
+  Svg,
+};

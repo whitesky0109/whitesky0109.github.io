@@ -3,23 +3,18 @@ import PropTypes from 'prop-types';
 
 import { Link } from 'gatsby';
 
-import {
-  H4GlobalStyled,
-  TechTagButtonStyled,
-  TagStyled,
-  SvgStyled,
-} from './TechTagStyled';
+import Styled from './TechTagStyled';
 
 const TechTag = ({
   tag, tech, name, size, color, img,
 }) => (
   <div className="d-inline-block p-1">
-    <H4GlobalStyled />
+    <Styled.H4Global />
     <Link to={`/tags/${tag}/`}>
-      <TechTagButtonStyled className="text-white">
+      <Styled.TechTagButton className="text-white">
         <p className="d-inline">{`${tech} `}</p>
-        <TagStyled className="d-inline" size={size} color={color}>
-          <SvgStyled role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width={size} height={size} color={color}>
+        <Styled.Tag className="d-inline" size={size} color={color}>
+          <Styled.Svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width={size} height={size} color={color}>
             <title>{tech}</title>
             {img != null && <image href={img} width={size} height={size} />}
             {name != null && (
@@ -28,9 +23,9 @@ const TechTag = ({
                 ? (name.map((n) => <path key={n} d={n} />))
                 : (<path d={name} />)
             )}
-          </SvgStyled>
-        </TagStyled>
-      </TechTagButtonStyled>
+          </Styled.Svg>
+        </Styled.Tag>
+      </Styled.TechTagButton>
     </Link>
 
   </div>
