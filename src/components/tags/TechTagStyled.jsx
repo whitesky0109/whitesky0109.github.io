@@ -1,14 +1,14 @@
 import styled, { createGlobalStyle } from 'styled-components';
 
 const H4Global = createGlobalStyle`
-  font-family: "Raleway";
+  font-family: Raleway;
 `;
 
 const TechTagButton = styled.button`
   background: black;
   border-radius: 20% 0 0 20%;
   border-color: transparent;
-  font-family: "Raleway";
+  font-family: Raleway;
   font-size: .85rem;
 `;
 

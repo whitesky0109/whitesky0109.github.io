@@ -7,7 +7,7 @@ const SiderbarMain = styled.div`
 const PageLinks = styled.div`
   margin-top: 3rem;
   padding-top: 4rem;
-  font-family: "Raleway";
+  font-family: Raleway;
 `;
 
 export default {

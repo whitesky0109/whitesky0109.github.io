@@ -20,7 +20,7 @@ const Sidebar = styled.div`
 `;
 
 const Heading = styled.h2`
-  font-family: "Raleway";
+  font-family: Raleway;
 `;
 
 export default {
