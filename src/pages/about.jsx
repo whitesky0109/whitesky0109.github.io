@@ -9,30 +9,31 @@ import './index.css';
 import Sidebar from '../components/sidebar/Sidebar';
 import TechTag from '../components/tags/TechTag';
 
+import BlogPostStyled from '../templates/blogPostStyled';
+
+const aboutTags = ['nodejs', 'react', 'html', 'css'];
+
 const AboutPage = ({ data }) => {
   const { labels } = data.site.siteMetadata;
-  const aboutTags = ['react', 'nodejs', 'html', 'css'];
-  const tags = {};
-  labels.forEach(label => {
-    aboutTags.forEach(tag => {
-      if (tag === label.tag) {
-        tags[tag] = label.name;
-      }
-    });
-  });
+
+  const tags = aboutTags.reduce((acc, tag) => {
+    const label = labels.find((item) => item.tag === tag);
+    acc[tag] = label.name;
+    return acc;
+  }, {});
 
   return (
     <Layout>
       <SEO title="About" />
-      <div className="post-page-main">
-        <div className="sidebar px-4 py-2">
+      <BlogPostStyled.PostPageMain>
+        <BlogPostStyled.Sidebar className="px-4 py-2">
           <Sidebar />
-        </div>
+        </BlogPostStyled.Sidebar>
 
         <div className="post-main">
           <SEO title="About" />
           <div className="mt-3">
-            <h2 className="heading">About</h2>
+            <BlogPostStyled.Heading>About</BlogPostStyled.Heading>
             <p>
               <i>
                 Developer Diary is a Gatsby Starter blog template created with
@@ -112,7 +113,7 @@ const AboutPage = ({ data }) => {
             </div>
           </div>
         </div>
-      </div>
+      </BlogPostStyled.PostPageMain>
     </Layout>
   );
 };

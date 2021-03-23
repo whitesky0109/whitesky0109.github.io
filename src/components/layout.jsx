@@ -34,13 +34,13 @@ const Layout = ({ children }) => (
         }
       }
     `}
-    render={(data) => (
+    render={({ site }) => (
       <>
         <Header
-          siteTitle={data.site.siteMetadata.title}
-          tagline={data.site.siteMetadata.tagline}
-          author={data.site.siteMetadata.author}
-          contacts={data.site.siteMetadata.contacts}
+          siteTitle={site.siteMetadata.title}
+          tagline={site.siteMetadata.tagline}
+          author={site.siteMetadata.author}
+          contacts={site.siteMetadata.contacts}
         />
         <Styled.Main>
           <main className="p-4">{children}</main>

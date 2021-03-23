@@ -9,6 +9,7 @@ import SEO from '../components/seo';
 import Sidebar from '../components/sidebar/Sidebar';
 import TechTag from '../components/tags/TechTag';
 
+/** @type {React.FC} */
 const Tag = ({ pageContext, data: { allMarkdownRemark, site } }) => {
   const posts = allMarkdownRemark.edges;
   const { labels } = site.siteMetadata;
@@ -18,17 +19,27 @@ const Tag = ({ pageContext, data: { allMarkdownRemark, site } }) => {
     totalCount === 1 ? '' : 's'
   } tagged with "${tag}"`;
 
-  const getTechTags = tags => {
-    const techTags = [];
-    tags.forEach((tag, i) => {
-      labels.forEach(label => {
-        if (tag === label.tag) {
-          techTags.push(<TechTag key={i} {...label} />);
-        }
-      });
-    });
-    return techTags;
-  };
+  const labelMap = labels.reduce((acc, label) => {
+    acc[label.tag] = label;
+    return acc;
+  }, {});
+
+  const getTechTags = (tags) => tags.map((t) => {
+    const label = labelMap[t];
+    return (
+      label && (
+      <TechTag
+        key={t}
+        tag={label.tag}
+        tech={label.tech}
+        name={label.name}
+        size={label.size}
+        color={label.color}
+        img={label.img}
+      />
+      )
+    );
+  });
 
   return (
     <Layout>
@@ -90,7 +101,7 @@ Tag.propTypes = {
               title: PropTypes.string.isRequired,
             }),
           }),
-        }).isRequired
+        }).isRequired,
       ),
     }),
   }),

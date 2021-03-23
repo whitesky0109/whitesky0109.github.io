@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import { Link, graphql } from 'gatsby';
 import 'bootstrap/dist/css/bootstrap.css';
 import '../pages/index.css';
@@ -8,6 +10,7 @@ import SEO from '../components/seo';
 import Sidebar from '../components/sidebar/Sidebar';
 import TechTag from '../components/tags/TechTag';
 
+/** @type {React.FC} */
 const PostList = ({ data, pageContext }) => {
   const posts = data.allMarkdownRemark.edges;
   const { labels } = data.site.siteMetadata;
@@ -17,17 +20,27 @@ const PostList = ({ data, pageContext }) => {
   const prevPage = currentPage - 1 === 1 ? '/' : `/${(currentPage - 1).toString()}`;
   const nextPage = `/${(currentPage + 1).toString()}`;
 
-  const getTechTags = tags => {
-    const techTags = [];
-    tags.forEach((tag, i) => {
-      labels.forEach(label => {
-        if (tag === label.tag) {
-          techTags.push(<TechTag key={i} {...label} />);
-        }
-      });
-    });
-    return techTags;
-  };
+  const labelMap = labels.reduce((acc, label) => {
+    acc[label.tag] = label;
+    return acc;
+  }, {});
+
+  const getTechTags = (tags) => tags.map((tag) => {
+    const label = labelMap[tag];
+    return (
+      label && (
+      <TechTag
+        key={tag}
+        tag={label.tag}
+        tech={label.tech}
+        name={label.name}
+        size={label.size}
+        color={label.color}
+        img={label.img}
+      />
+      )
+    );
+  });
 
   return (
     <Layout>
@@ -47,21 +60,21 @@ const PostList = ({ data, pageContext }) => {
           <Sidebar />
         </div>
         <div className="post-list-main">
-          {posts.map(post => {
-            const { tags } = post.node.frontmatter;
+          {posts.map(({ node }) => {
+            const { tags } = node.frontmatter;
             return (
-              <div key={post.node.id} className="container mt-5">
-                <Link to={post.node.fields.slug} className="text-dark">
-                  <h2 className="title">{post.node.frontmatter.title}</h2>
+              <div key={node.id} className="container mt-5">
+                <Link to={node.fields.slug} className="text-dark">
+                  <h2 className="title">{node.frontmatter.title}</h2>
                 </Link>
                 <small className="d-block text-info">
                   <i>
                     Posted on
-                    {post.node.frontmatter.date}
+                    {node.frontmatter.date}
                   </i>
                 </small>
-                <p className="mt-3 d-inline">{post.node.excerpt}</p>
-                <Link to={post.node.fields.slug} className="text-primary">
+                <p className="mt-3 d-inline">{node.excerpt}</p>
+                <Link to={node.fields.slug} className="text-primary">
                   <small className="d-inline-block ml-3"> Read full post</small>
                 </Link>
                 <div className="d-block">{getTechTags(tags)}</div>
@@ -84,6 +97,11 @@ const PostList = ({ data, pageContext }) => {
       </div>
     </Layout>
   );
+};
+
+PostList.propTypes = {
+  data: PropTypes.instanceOf(Object).isRequired,
+  pageContext: PropTypes.instanceOf(Object).isRequired,
 };
 
 export const listQuery = graphql`

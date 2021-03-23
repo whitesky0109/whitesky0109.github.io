@@ -5,31 +5,35 @@ import TechTag from '../tags/TechTag';
 
 /** @type {React.FC} */
 const TechTags = ({ labels, posts }) => {
-  const labelCount = labels.map(({ tag }) => {
-    let count = 0;
-    posts.forEach(({ node }) => {
-      if (node.frontmatter.tags.includes(tag)) {
-        count += 1;
-      }
-    });
-    return [tag, count];
+  const labelMap = {};
+  const tags = labels.reduce((acc, label) => {
+    labelMap[label.tag] = label;
+
+    const count = posts
+      .filter(({ node }) => node.frontmatter.tags.includes(label.tag) === true)
+      .length;
+
+    if (count > 0) {
+      acc.push(label.tag);
+    }
+
+    return acc;
+  }, []);
+
+  const getTechTags = (tagList) => tagList.map((tag) => {
+    const label = labelMap[tag];
+    return label && (
+    <TechTag
+      key={tag}
+      tag={label.tag}
+      tech={label.tech}
+      name={label.name}
+      size={label.size}
+      color={label.color}
+      img={label.img}
+    />
+    );
   });
-
-  const categories = labelCount.filter((label) => label[1] > 0);
-
-  const tags = categories.map((category) => category[0]);
-
-  const getTechTags = (tagList) => {
-    const techTags = [];
-    tagList.forEach((tag, i) => {
-      labels.forEach((label) => {
-        if (tag === label.tag) {
-          techTags.push(<TechTag key={i} {...label} />);
-        }
-      });
-    });
-    return techTags;
-  };
 
   return (
     <>

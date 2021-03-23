@@ -6,28 +6,25 @@ import {
 } from 'react-icons/fa';
 import { ShareBlockStandard, ShareButtonIconOnly } from 'react-custom-share';
 
-const CustomShareBlock = (props) => {
-  const { url, title, siteName } = props;
+const buttons = [
+  { network: 'Twitter', icon: FaTwitter },
+  { network: 'Facebook', icon: FaFacebook },
+  { network: 'Linkedin', icon: FaLinkedin },
+  { network: 'Email', icon: FaEnvelope },
+];
 
-  const shareBlockProps = {
-    url,
-    button: ShareButtonIconOnly,
-    buttons: [
-      { network: 'Twitter', icon: FaTwitter },
-      { network: 'Facebook', icon: FaFacebook },
-      { network: 'Linkedin', icon: FaLinkedin },
-      { network: 'Email', icon: FaEnvelope },
-    ],
-    text: title,
-    longtext: siteName,
-  };
-  return (
-    <div className="mt-4">
-      <ShareBlockStandard {...shareBlockProps} />
-      <p className="text-center"><i>If you like it, share it!</i></p>
-    </div>
-  );
-};
+const CustomShareBlock = ({ url, title, siteName }) => (
+  <div className="mt-4">
+    <ShareBlockStandard
+      url={url}
+      button={ShareButtonIconOnly}
+      buttons={buttons}
+      text={title}
+      longtext={siteName}
+    />
+    <p className="text-center"><i>If you like it, share it!</i></p>
+  </div>
+);
 
 CustomShareBlock.propTypes = {
   url: PropTypes.string,

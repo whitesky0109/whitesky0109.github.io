@@ -15,7 +15,7 @@ import Styled from './blogPostStyled';
 /** @type {React.FC<>} */
 const BlogPost = ({ data, pageContext }) => {
   const { title, tags, date } = data.markdownRemark.frontmatter;
-  const { labels, url: siteUrl, title: siteName } = data.site.siteMetadata;
+  const { labels, url, title: siteName } = data.site.siteMetadata;
 
   const labelMap = labels.reduce((acc, label) => {
     acc[label.tag] = label;
@@ -37,7 +37,6 @@ const BlogPost = ({ data, pageContext }) => {
     );
   });
 
-  const url = `${siteUrl}${pageContext.slug}`;
   return (
     <Layout>
       <SEO title={title} />
@@ -60,7 +59,7 @@ const BlogPost = ({ data, pageContext }) => {
             <div
               dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
             />
-            <CustomShareBlock title={title} siteName={siteName} url={url} />
+            <CustomShareBlock title={title} siteName={siteName} url={`${url}${pageContext.slug}`} />
           </div>
         </div>
       </Styled.PostPageMain>

@@ -19,26 +19,24 @@ const IndexPage = ({ data: { site, allMarkdownRemark } }) => {
   const nextPage = `/${(currentPage + 1).toString()}`;
   const hasNextPage = allMarkdownRemark.totalCount > postsPerPage;
 
-  const getTechTags = tags => {
-    const techTags = [];
-    tags.forEach((tag, i) => {
-      labels.forEach(label => {
-        if (tag === label.tag) {
-          techTags.push(
-            <TechTag
-              key={i}
-              tag={label.tag}
-              tech={label.tech}
-              name={label.name}
-              size={label.size}
-              color={label.color}
-            />,
-          );
-        }
-      });
-    });
-    return techTags;
-  };
+  const labelMap = labels.reduce((acc, label) => {
+    acc[label.tag] = label;
+    return acc;
+  }, {});
+
+  const getTechTags = (tags) => tags.map((tag) => {
+    const label = labelMap[tag];
+    return label && (
+    <TechTag
+      key={label.tag}
+      tag={label.tag}
+      tech={label.tech}
+      name={label.name}
+      size={label.size}
+      color={label.color}
+    />
+    );
+  });
 
   return (
     <Layout>
@@ -58,21 +56,21 @@ const IndexPage = ({ data: { site, allMarkdownRemark } }) => {
           <Sidebar />
         </div>
         <div className="post-list-main">
-          {posts.map(post => {
-            const { tags } = post.node.frontmatter;
+          {posts.map(({ node }) => {
+            const { tags } = node.frontmatter;
             return (
-              <div key={post.node.id} className="container mt-5">
-                <Link to={post.node.fields.slug} className="text-dark">
-                  <h2 className="title">{post.node.frontmatter.title}</h2>
+              <div key={node.id} className="container mt-5">
+                <Link to={node.fields.slug} className="text-dark">
+                  <h2 className="title">{node.frontmatter.title}</h2>
                 </Link>
                 <small className="d-block text-info">
                   <i>
                     Posted on
-                    {post.node.frontmatter.date}
+                    {node.frontmatter.date}
                   </i>
                 </small>
-                <p className="mt-3 d-inline">{post.node.excerpt}</p>
-                <Link to={post.node.fields.slug} className="text-primary">
+                <p className="mt-3 d-inline">{node.excerpt}</p>
+                <Link to={node.fields.slug} className="text-primary">
                   <small className="d-inline-block ml-3"> Read full post</small>
                 </Link>
                 <div className="d-block">{getTechTags(tags)}</div>
