@@ -57,7 +57,7 @@
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "yarn develop",
     "serve": "gatsby serve",
-    "deploy": "gatsby build && gh-pages -d public -b public",
+    "deploy": "gatsby build && gh-pages -d public -b public -r http://$GITHUB_TOKEN@github.com/whitesky0109/whitesky0109.github.io",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "repository": {

@@ -1,15 +1,14 @@
 language: node_js
 
 node_js:
-  - "stable"
+  - "lts/*"
 
 cache:
   directories:
   - node_modules
 
 deploy:
-  privider: pages
-  skip_cleanup: true
+  provider: pages
   github_token: $GITHUB_TOKEN
   keep_history: true
   on:
