@@ -12,6 +12,8 @@ cache:
 
 deploy:
   provider: pages # Use Github pages deploy process
+  skip-cleanup: true
+  local_dir: public
   github_token: $GITHUB_TOKEN # Github security/auth token
   keep_history: true
   target_branch: public
