@@ -17,27 +17,25 @@ const BlogPost = ({ data, pageContext }) => {
   const { title, tags, date } = data.markdownRemark.frontmatter;
   const { labels, url: siteUrl, title: siteName } = data.site.siteMetadata;
 
-  const getTechTags = (tagList) => {
-    const techTags = [];
-    tagList.forEach((tag) => {
-      labels.forEach((label) => {
-        if (tag === label.tag) {
-          techTags.push(
-            <TechTag
-              key={tag}
-              tag={label.tag}
-              tech={label.tech}
-              name={label.name}
-              size={label.size}
-              color={label.color}
-              img={label.img}
-            />,
-          );
-        }
-      });
-    });
-    return techTags;
-  };
+  const labelMap = labels.reduce((acc, label) => {
+    acc[label.tag] = label;
+    return acc;
+  }, {});
+
+  const getTechTags = (tagList) => tagList.map((tag) => {
+    const label = labelMap[tag];
+    return label && (
+      <TechTag
+        key={tag}
+        tag={label.tag}
+        tech={label.tech}
+        name={label.name}
+        size={label.size}
+        color={label.color}
+        img={label.img}
+      />
+    );
+  });
 
   const url = `${siteUrl}${pageContext.slug}`;
   return (
