@@ -1,5 +1,5 @@
 ---
-title: 'Gatsby로 Github.io 생성기'
+title: 'Gatsby로 Github.io 만들기'
 tags: ['gatsby', 'nodejs']
 published: true
 date: '2021-03-18'
