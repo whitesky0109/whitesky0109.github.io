@@ -5,7 +5,7 @@ module.exports = {
   copyright: '© 2019 whitesky0109, All rights reserved',
   author: {
     name: 'Gunwoo cho',
-    bio: 'Self-taught web developer and whisky aficionado',
+    bio: 'Hanwha Techwin web developer',
     contacts: {
       linkedin: 'https://www.linkedin.com/in/건우-조-947268137/',
       github: 'https://github.com/whitesky0109',
