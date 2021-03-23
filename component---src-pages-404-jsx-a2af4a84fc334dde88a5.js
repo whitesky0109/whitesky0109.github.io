@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[6],{pssB:function(e,t,n){"use strict";n.r(t);var a=n("q1tI"),r=n.n(a),l=n("L12J"),u=n("dmsj");t.default=function(){return r.a.createElement(l.a,null,r.a.createElement(u.a,{title:"404: Not found"}),r.a.createElement("h1",null,"Page Not Found"),r.a.createElement("p",null,r.a.createElement("i",null,"Just lightin' out for the territories, huh? Brother, I been there.")))}}}]);
+//# sourceMappingURL=component---src-pages-404-jsx-a2af4a84fc334dde88a5.js.map
