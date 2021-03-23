@@ -38,7 +38,7 @@ exports.createPages = async ({ graphql, actions }) => {
   edges.forEach(({ node: { fields: { slug } } }) => {
     createPage({
       path: slug,
-      component: path.resolve('./src/templates/blog-post.js'),
+      component: path.resolve('./src/templates/blogPost.jsx'),
       context: {
         // Data passed to context is available
         // in page queries as GraphQL variables.
