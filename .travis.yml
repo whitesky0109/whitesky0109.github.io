@@ -4,13 +4,18 @@ node_js:
   - "lts/*"
 
 cache:
+  yarn: true
   directories:
-  - node_modules
+    - node_modules
+    - public
+    - .cache
 
 deploy:
-  provider: pages
-  github_token: $GITHUB_TOKEN
+  provider: pages # Use Github pages deploy process
+  local_dir: public
+  github_token: $GITHUB_TOKEN # Github security/auth token
   keep_history: true
+  target_branch: public
   on:
     branch: master
 
@@ -19,4 +24,4 @@ before_script:
   - "yarn"
 
 script:
-  - yarn deploy
+  - gatsby build
