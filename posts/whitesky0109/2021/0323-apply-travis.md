@@ -37,12 +37,12 @@ CI(Continuous Integration)/CD(Continuous Delivery) 도구 중 하나
 
 https://github.com/settings/tokens
 
-![](/snapshot/2021/0323/createGithubTokenGuide1.png)
+![](/snapshot/2021/0323/createGithubTokenGuide1.PNG)
 (repo와 관련한 설정은 허용하도록 설정하자.)
 
 그리고 저장하면 아래의 그림과 같이토 토큰 값을 볼 수 있다.
 생성된 토큰 값은 어딘가 저장하자.(이후에 사용해야 하는 값)
-![](/snapshot/2021/0323/createGithubTokenGuide2.png)
+![](/snapshot/2021/0323/createGithubTokenGuide2.PNG)
 (Token 생성 후 토큰 값을 볼 수 있는데, 페이지 새로 고침하면 다시는 볼 수 없다.
 다만 토큰 값을 재생성은 가능하다.)
 
@@ -55,27 +55,27 @@ https://github.com/settings/tokens
 
 #### Repositories 활성화
 
-![](/snapshot/2021/0323/activeRepositoryTravisGuide1.png)
+![](/snapshot/2021/0323/activeRepositoryTravisGuide1.PNG)
 (활성화 버튼을 클릭 하면 Github 페이지로 리다이렉트가 됩니다.)
 
 Travis에서 접근가능한 Repository를 지정하자.
-![](/snapshot/2021/0323/activeRepositoryTravisGuide2.png)
+![](/snapshot/2021/0323/activeRepositoryTravisGuide2.PNG)
 (나는 Travis에서는 github.io만 사용할 예정이라 특정 Repository를 지정했다.)
 
 #### Repository 등록 확인
 
 [dashboard](https://travis-ci.com/dashboard)에 접근하면 활성화된 Repository 목록을 확인 할 수 있다.
 
-![](/snapshot/2021/0323/activeRepositoryTravisGuide3.png)
+![](/snapshot/2021/0323/activeRepositoryTravisGuide3.PNG)
 
 #### Repository 설정으로 GITHUB_TOKEN 추가
 
 Travis를 통해 Github에 배포(Commit)를 위해서는 Git 접근 권한을 설정해줘야 한다.
 
 1. 특정 Repository의 설정 페이지에 접근하자.
-  ![](/snapshot/2021/0323/settingRepositoryInTravisGuide1.png)
+  ![](/snapshot/2021/0323/settingRepositoryInTravisGuide1.PNG)
 2. 설정 하단에 Environment Variables에 앞에서 받아온 Github token값을 등록하자.
-  ![](/snapshot/2021/0323/settingRepositoryInTravisGuide3.png)
+  ![](/snapshot/2021/0323/settingRepositoryInTravisGuide3.PNG)
   (나는 배포 코드는 master에 있기에 master 브랜치도 지정했다.)
 
 ---
@@ -123,7 +123,7 @@ script:
 ## 빌드 결과
 
 git의 빌드 결과는 build history에서 볼 수 있다.
-![](/snapshot/2021/0323/buildTravisGuide1.png)
+![](/snapshot/2021/0323/buildTravisGuide1.PNG)
 
 
 ---
