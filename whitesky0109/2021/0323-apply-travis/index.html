@@ -133,11 +133,11 @@ data-styled.g38[id="sc-global-fbKIVt16"]{content:"sc-global-fbKIVt16,"}/*!sc*/
 <p>내 github 수정 권한을 Travis에 제공해야하는데, 이를 얻기 위해 github token 생성이 필요하다.</p>
 <p>아래의 링크에서 github token을 생성해야 한다.</p>
 <p><a href="https://github.com/settings/tokens">https://github.com/settings/tokens</a></p>
-<p><img src="/snapshot/2021/0323/createGithubTokenGuide1.png">
+<p><img src="/snapshot/2021/0323/createGithubTokenGuide1.PNG">
 (repo와 관련한 설정은 허용하도록 설정하자.)</p>
 <p>그리고 저장하면 아래의 그림과 같이토 토큰 값을 볼 수 있다.
 생성된 토큰 값은 어딘가 저장하자.(이후에 사용해야 하는 값)
-<img src="/snapshot/2021/0323/createGithubTokenGuide2.png">
+<img src="/snapshot/2021/0323/createGithubTokenGuide2.PNG">
 (Token 생성 후 토큰 값을 볼 수 있는데, 페이지 새로 고침하면 다시는 볼 수 없다.
 다만 토큰 값을 재생성은 가능하다.)</p>
 <hr>
@@ -145,21 +145,21 @@ data-styled.g38[id="sc-global-fbKIVt16"]{content:"sc-global-fbKIVt16,"}/*!sc*/
 <p><a href="https://travis-ci.com/">travis</a> 페이지에 접근하여 github 계정으로 로그인하여 Travis github 계정을 만들자.</p>
 <p><a href="https://travis-ci.com/account/repositories">repositories</a>에 접근하여 Github Integration 활성화 하자.</p>
 <h4>Repositories 활성화</h4>
-<p><img src="/snapshot/2021/0323/activeRepositoryTravisGuide1.png">
+<p><img src="/snapshot/2021/0323/activeRepositoryTravisGuide1.PNG">
 (활성화 버튼을 클릭 하면 Github 페이지로 리다이렉트가 됩니다.)</p>
 <p>Travis에서 접근가능한 Repository를 지정하자.
-<img src="/snapshot/2021/0323/activeRepositoryTravisGuide2.png">
+<img src="/snapshot/2021/0323/activeRepositoryTravisGuide2.PNG">
 (나는 Travis에서는 github.io만 사용할 예정이라 특정 Repository를 지정했다.)</p>
 <h4>Repository 등록 확인</h4>
 <p><a href="https://travis-ci.com/dashboard">dashboard</a>에 접근하면 활성화된 Repository 목록을 확인 할 수 있다.</p>
-<p><img src="/snapshot/2021/0323/activeRepositoryTravisGuide3.png"></p>
+<p><img src="/snapshot/2021/0323/activeRepositoryTravisGuide3.PNG"></p>
 <h4>Repository 설정으로 GITHUB_TOKEN 추가</h4>
 <p>Travis를 통해 Github에 배포(Commit)를 위해서는 Git 접근 권한을 설정해줘야 한다.</p>
 <ol>
 <li>특정 Repository의 설정 페이지에 접근하자.
-<img src="/snapshot/2021/0323/settingRepositoryInTravisGuide1.png"></li>
+<img src="/snapshot/2021/0323/settingRepositoryInTravisGuide1.PNG"></li>
 <li>설정 하단에 Environment Variables에 앞에서 받아온 Github token값을 등록하자.
-<img src="/snapshot/2021/0323/settingRepositoryInTravisGuide3.png">
+<img src="/snapshot/2021/0323/settingRepositoryInTravisGuide3.PNG">
 (나는 배포 코드는 master에 있기에 master 브랜치도 지정했다.)</li>
 </ol>
 <hr>
@@ -199,7 +199,7 @@ data-styled.g38[id="sc-global-fbKIVt16"]{content:"sc-global-fbKIVt16,"}/*!sc*/
 <hr>
 <h2>빌드 결과</h2>
 <p>git의 빌드 결과는 build history에서 볼 수 있다.
-<img src="/snapshot/2021/0323/buildTravisGuide1.png"></p>
+<img src="/snapshot/2021/0323/buildTravisGuide1.PNG"></p>
 <hr>
 <h2>도움 받은 사이트</h2>
 <ul>
